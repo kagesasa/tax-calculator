@@ -5,6 +5,10 @@ import ResultCard from './components/ResultCard';
 import Keypad from './components/Keypad';
 import SettingsPanel from './components/SettingsPanel';
 import HistoryList from './components/HistoryList';
+// Icons are SVG now, removed lucide imports usage if not needed or used directly
+// Wait, I used inline SVGs in previous edit, but kept import.
+// Let's remove the import if I used inline SVGs or added Lucide.
+// I installed Lucide, so I can use Lucide icons!
 import { History, Settings, Save } from 'lucide-react';
 
 function App() {
@@ -23,6 +27,25 @@ function App() {
 
   const [showHistory, setShowHistory] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+
+  // Trigger history save on calculation completion effectively? 
+  // Actually, standard calculator behavior is to add to history on "=" press. 
+  // Since this is instant calculation, maybe add a specific "Save" or "Next" button?
+  // Or just auto-log when input is cleared or mode changed?
+  // For now, let's add a manual "Save/Next" button or assume user wants to see result first.
+  // The 'AC' button clears input.
+
+  // Refined Logic for Logic Hook: 
+  // We need a way to commit the current calculation to history.
+  // Let's add that to keypad or a separate action. 
+  // But spec says "straight calculation".
+  // "直前の計算結果がリストで残るようにし" -> implied automatic or on 'Enter'?
+  // Let's add an Enter key to Keypad for "Done/Next" which adds to history and clears input?
+
+  // Wait, keypad doesn't have Enter.
+  // I'll add an "Enter" equivalent or just modify AC to "Save & Clear" and "Clear All".
+  // Actually, let's rely on a manual "Add to List" button or auto-add when input is cleared after a valid calc?
+  // Let's modify Keypad to have an "=" button which saves to history.
 
   const onKeypadInput = (key: string) => {
     handleInput(key);
