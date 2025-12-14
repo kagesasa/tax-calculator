@@ -7,7 +7,7 @@ interface KeypadProps {
 const Keypad: React.FC<KeypadProps> = ({ onInput }) => {
     const keys = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '00', '.'];
 
-    const buttonBaseClass = "relative h-14 sm:h-16 rounded-xl sm:rounded-2xl font-bold text-2xl sm:text-3xl transition-all active:top-[2px] active:shadow-none bg-slate-800 text-slate-200 shadow-[0_3px_0_0_rgba(30,41,59,1)] hover:bg-slate-700";
+    const buttonBaseClass = "relative h-12 sm:h-16 rounded-xl sm:rounded-2xl font-bold text-2xl sm:text-3xl transition-all active:top-[2px] active:shadow-none bg-slate-800 text-slate-200 shadow-[0_3px_0_0_rgba(30,41,59,1)] hover:bg-slate-700";
     const actionButtonClass = "relative flex-1 rounded-xl sm:rounded-2xl font-bold text-xl sm:text-2xl transition-all active:top-[2px] active:shadow-none shadow-[0_3px_0_0_rgba(15,23,42,0.5)] flex items-center justify-center";
 
     return (
