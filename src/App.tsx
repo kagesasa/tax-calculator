@@ -5,10 +5,6 @@ import ResultCard from './components/ResultCard';
 import Keypad from './components/Keypad';
 import SettingsPanel from './components/SettingsPanel';
 import HistoryList from './components/HistoryList';
-// Icons are SVG now, removed lucide imports usage if not needed or used directly
-// Wait, I used inline SVGs in previous edit, but kept import.
-// Let's remove the import if I used inline SVGs or added Lucide.
-// I installed Lucide, so I can use Lucide icons!
 import { History, Settings, Save } from 'lucide-react';
 
 function App() {
@@ -27,25 +23,6 @@ function App() {
 
   const [showHistory, setShowHistory] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-
-  // Trigger history save on calculation completion effectively? 
-  // Actually, standard calculator behavior is to add to history on "=" press. 
-  // Since this is instant calculation, maybe add a specific "Save" or "Next" button?
-  // Or just auto-log when input is cleared or mode changed?
-  // For now, let's add a manual "Save/Next" button or assume user wants to see result first.
-  // The 'AC' button clears input.
-
-  // Refined Logic for Logic Hook: 
-  // We need a way to commit the current calculation to history.
-  // Let's add that to keypad or a separate action. 
-  // But spec says "straight calculation".
-  // "直前の計算結果がリストで残るようにし" -> implied automatic or on 'Enter'?
-  // Let's add an Enter key to Keypad for "Done/Next" which adds to history and clears input?
-
-  // Wait, keypad doesn't have Enter.
-  // I'll add an "Enter" equivalent or just modify AC to "Save & Clear" and "Clear All".
-  // Actually, let's rely on a manual "Add to List" button or auto-add when input is cleared after a valid calc?
-  // Let's modify Keypad to have an "=" button which saves to history.
 
   const onKeypadInput = (key: string) => {
     handleInput(key);
@@ -121,9 +98,9 @@ function App() {
             <div className="flex gap-2 sm:gap-4 mb-2 sm:mb-4 px-2 sm:px-4">
               <button
                 onClick={handleSave}
-                className="relative flex-1 bg-indigo-600 hover:bg-indigo-500 text-white py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-[0_3px_0_0_rgba(55,48,163,1)] active:top-[2px] active:shadow-none transition-all flex items-center justify-center gap-2"
+                className="relative flex-1 bg-indigo-600 hover:bg-indigo-500 text-white py-2 sm:py-4 rounded-xl font-bold text-sm sm:text-lg shadow-[0_2px_0_0_rgba(55,48,163,1)] active:top-[2px] active:shadow-none transition-all flex items-center justify-center gap-2"
               >
-                <Save size={18} />
+                <Save size={16} />
                 <span>履歴に保存</span>
               </button>
             </div>
