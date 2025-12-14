@@ -49,7 +49,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result }) => {
     const isAddMode = result.mode === 'ADD_TAX';
 
     return (
-        <div className="grid grid-cols-2 gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-[140px] sm:min-h-0">
             {/* 10% Result */}
             <ResultRow
                 label={isAddMode ? "税込(10%)" : "本体(元10%)"}
